@@ -7,7 +7,7 @@
 typedef struct{
 	TokenKind kind;
 	char * name;
-}KeywordInfo;
+}KeywordInfo; 
 
 static char defaultNextChar(void);
 
@@ -24,6 +24,7 @@ static char * tokenNames[] = {
 	#include "tokens.txt"
 	#undef	TOKEN
 };
+
 Token curToken;
 
 ////////////////////////////////////////////////////////////////////////
@@ -37,7 +38,7 @@ static TokenKind GetKeywordKind(char * id){
 	return TK_ID;
 }
 static int IsWhiteSpace(char ch){
-	return ch == ' ' || ch == '\t' || ch == '\n' || ch == '\r';
+	return ch == ' ' || ch == '\t' || ch == '\n' || ch == '\r'; //跳过空格、制表符、回车和换行等空白符
 }
 static char defaultNextChar(void){
 	return EOF_CH;

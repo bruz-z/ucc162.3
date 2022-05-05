@@ -66,7 +66,7 @@ static AstNodePtr PrimaryExpression(void){
 
 
 //	id - id - id -....
-static AstNodePtr MultiplicativeExpression(void){
+static AstNodePtr MultiplicativeExpression(void){		//代码走的是右结合?
 #ifndef	MUL_RIGHT_ASSOCIATE
 	AstNodePtr left;
 	left = PrimaryExpression();
@@ -84,7 +84,7 @@ static AstNodePtr MultiplicativeExpression(void){
 	return left;
 #else
 	AstNodePtr left;
-	left = PrimaryExpression();;
+	left = PrimaryExpression();
 	if(curToken.kind == TK_MUL || curToken.kind == TK_DIV){
 		Value value;
 		AstNodePtr expr;
